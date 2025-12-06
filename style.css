@@ -1,0 +1,180 @@
+/*
+ * Global stylesheet for Qiyas Plus Academy site.
+ * Sets a light, modern look with Arabic right‑to‑left layout support.
+ */
+
+/* Color palette */
+:root {
+  --primary-color: #005a8d; /* dark blue for headers and buttons */
+  --secondary-color: #0078b5; /* lighter blue for accents */
+  --accent-color: #e5f3fa; /* very light blue background */
+  --text-color: #333333;
+  --background-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Container helper */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* Hero section */
+.hero {
+  background: var(--secondary-color);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero .btn:hover {
+  background-color: #00456d;
+}
+
+/* Section headings */
+section {
+  margin: 3rem 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Course cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.card p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.card .btn {
+  align-self: flex-start;
+  background-color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f9fc;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
