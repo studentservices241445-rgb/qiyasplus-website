@@ -1,180 +1,174 @@
-/*
- * Global stylesheet for Qiyas Plus Academy site.
- * Sets a light, modern look with Arabic right‑to‑left layout support.
- */
-
-/* Color palette */
-:root {
-  --primary-color: #005a8d; /* dark blue for headers and buttons */
-  --secondary-color: #0078b5; /* lighter blue for accents */
-  --accent-color: #e5f3fa; /* very light blue background */
-  --text-color: #333333;
-  --background-color: #ffffff;
-}
-
+/* تنسيق بسيط مؤقت للموقع قيد التطوير */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-  direction: rtl;
-  text-align: right;
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f7fb;
+    color: #333;
 }
 
-/* Container helper */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
+/* Header and navigation */
 header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #004080;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
 }
 
-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: opacity 0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 }
 
 nav a:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 /* Hero section */
 .hero {
-  background: var(--secondary-color);
-  color: white;
-  padding: 3rem 0;
-  text-align: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #0070b8;
+    color: #fff;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
 }
 
-.hero .btn {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
+.hero .cta {
+    background-color: #00a3e0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.hero .btn:hover {
-  background-color: #00456d;
+.hero .cta:hover {
+    background-color: #008ac7;
 }
 
-/* Section headings */
-section {
-  margin: 3rem 0;
+/* Courses section */
+.courses {
+    padding: 40px 20px;
 }
 
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-/* Course cards grid */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+.course-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card {
-  background-color: var(--background-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.course-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
 }
 
-.card h3 {
-  margin-top: 0;
-  font-size: 1.4rem;
-  color: var(--primary-color);
+.course-card p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
 }
 
-.card p {
-  flex-grow: 1;
-  margin-bottom: 1rem;
+.course-card a {
+    align-self: flex-start;
+    background-color: #004080;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
 }
 
-.card .btn {
-  align-self: flex-start;
-  background-color: var(--secondary-color);
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+.course-card a:hover {
+    background-color: #003566;
 }
 
-.card .btn:hover {
-  background-color: var(--primary-color);
+/* Tables for packages */
+table.packages {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-/* Table styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+table.packages th,
+table.packages td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: center;
 }
 
-th, td {
-  border: 1px solid #dddddd;
-  padding: 0.75rem;
-  text-align: center;
+table.packages th {
+    background-color: #004080;
+    color: #fff;
 }
 
-th {
-  background-color: var(--primary-color);
-  color: white;
+table.packages tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f5f9fc;
-}
-
-/* Footer */
+/* Footer styles */
 footer {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-  margin-top: 3rem;
+    background-color: #00234e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
