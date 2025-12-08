@@ -173,6 +173,63 @@ footer {
     bottom: 0;
 }
 
+/* Test section styles */
+.test-question p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.test-question label {
+    cursor: pointer;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+.test-question button {
+    margin-top: 0.5rem;
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.test-question button:hover {
+    background-color: #003566;
+}
+#test-result-step, #test-result-qdrat, #test-result-tahsili,
+#test-result-cognitive, #test-result-english, #test-result-ielts {
+    margin-top: 1rem;
+    background-color: #f8f9fc;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+.cta {
+    display: inline-block;
+    background-color: #00a3e0;
+    color: #fff;
+    padding: 8px 14px;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.cta:hover {
+    background-color: #008ac7;
+}
+
+/* Copy button style */
+.copy-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 0.85rem;
+}
+.copy-btn:hover {
+    background-color: #e6e6e6;
+}
+
 /* Notification toast for social proof pop-ups */
 .notification-toast {
     position: fixed;

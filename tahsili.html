@@ -72,10 +72,48 @@
                     <td>799 ر.س</td>
                 </tr>
             </table>
+
+            <!-- صورة توضيحية لدرجات الطلاب السابقين -->
+            <div style="text-align:center; margin-top:20px;">
+                <img src="grades.png" alt="تطور درجات الطلاب" style="max-width:100%; height:auto; border-radius:8px;">
+            </div>
+
+            <!-- مصادر مجانية للدراسة -->
+            <h3>مصادر مجانية</h3>
+            <ul>
+                <li><a href="https://etec.gov.sa/" target="_blank">موقع هيئة تقويم التعليم والتدريب</a> يقدم معلومات رسمية عن الاختبار التحصيلي.</li>
+                <li><a href="https://saudiqiyas.com/%D8%A7%D9%84%D8%AF%D8%B1%D8%B3-1/" target="_blank">مقالات عن التحصيلي العلمي</a> لتطوير معرفتك وأساليب الحل.</li>
+                <li><a href="https://routesa.app" target="_blank">منصة روت التعليمية</a> تحتوي على نصائح ومصادر إضافية للمذاكرة.</li>
+            </ul>
+
+            <!-- اختبار تجريبي شامل -->
+            <h3>اختبار تجريبي شامل</h3>
+            <p>اختبر مستواك في التحصيلي العلمي من خلال هذا الاختبار القصير. بعد الانتهاء ستظهر نتيجتك وتوصية الباقة المناسبة.</p>
+            <div id="test-container-tahsili"></div>
+            <button id="start-test-tahsili" class="cta">ابدأ الاختبار التجريبي</button>
+            <div id="test-result-tahsili"></div>
+
+            <!-- إحصائيات وخصومات -->
+            <h3>إحصائيات وخصومات</h3>
+            <p>انضم إلينا أكثر من <strong>3000 طالب</strong> في هذه الدورة! يمكنك الحصول على خصم <strong>10٪</strong> عند الاشتراك مع أصدقائك أو عبر رابط الإحالة الخاص بك. بعد الاشتراك ستجد رابطك في لوحة التحكم؛ شاركه مع غيرك لتحصل على خصومات إضافية.</p>
+
+            <!-- طرق الدفع -->
+            <h3>طرق الدفع</h3>
+            <p>يمكنك الدفع عبر التحويل البنكي للحساب التالي:</p>
+            <ul>
+                <li>البنك: بنك الإنماء</li>
+                <li>رقم الحساب: 68206067557000 <button class="copy-btn" onclick="copyToClipboard('68206067557000')">نسخ</button></li>
+                <li>الآيبان: SA4905000068206067557000 <button class="copy-btn" onclick="copyToClipboard('SA4905000068206067557000')">نسخ</button></li>
+                <li>اسم المستفيد: مؤسسة الفا الإبداعية لتقنية المعلومات</li>
+            </ul>
+            <p>أو يمكنك الدفع باستخدام نجوم تيليجرام مباشرة عبر البوت. بعد الدفع سيتم تأكيد اشتراكك وإرسال دعوة للقناة الخاصة بالدورة.</p>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 أكاديمية قياس بلس. جميع الحقوق محفوظة.</p>
     </footer>
+    <script src="notifications.js" defer></script>
+    <script src="course_test.js" defer></script>
+    <script src="utils.js" defer></script>
 </body>
 </html>
