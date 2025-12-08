@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار تحديد المستوى - أكاديمية قياس بلس</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple styling for the quiz */
+        .quiz-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-question {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .quiz-options input[type="radio"] {
+            margin-left: 0.5rem;
+        }
+        .quiz-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+        .quiz-buttons button {
+            padding: 0.5rem 1rem;
+            background-color: #0074D9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .quiz-buttons button[disabled] {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .result {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            color: #0074D9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>أكاديمية قياس بلس</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="step.html">STEP</a></li>
+                    <li><a href="qdrat.html">القدرات العامة</a></li>
+                    <li><a href="tahsili.html">التحصيلي</a></li>
+                    <li><a href="cognitive.html">القدرة المعرفية</a></li>
+                    <li><a href="english.html">تأسيس الإنجليزية</a></li>
+                    <li><a href="ielts.html">IELTS</a></li>
+                    <li><a href="placement.html" class="active">اختبار تحديد المستوى</a></li>
+                    <li><a href="payment.html">طرق الدفع</a></li>
+                    <li><a href="advertisers.html">المعلنين</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <h2 style="text-align:center; margin-top: 2rem;">اختبار تحديد المستوى</h2>
+        <p style="text-align:center;">أجب عن الأسئلة التالية لتحديد مستواك التقريبي في اللغة الإنجليزية، ثم تعرف على الدورة المناسبة لك.</p>
+        <div class="quiz-container" id="quiz">
+            <!-- Questions will be injected here -->
+        </div>
+        <div class="quiz-buttons">
+            <button id="prev-btn" disabled>السابق</button>
+            <button id="next-btn">التالي</button>
+        </div>
+        <div class="result" id="result"></div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © 2025 أكاديمية قياس بلس</p>
+        </div>
+    </footer>
+    <script>
+        // Placement test questions
+        const questions = [
+            {
+                q: 'ما معنى كلمة "important"؟',
+                options: ['ضعيف', 'مهم', 'غريب', 'خطر'],
+                answer: 1
+            },
+            {
+                q: 'اختر الكلمة الصحيحة: She ____ to the market yesterday.',
+                options: ['go', 'goes', 'went', 'going'],
+                answer: 2
+            },
+            {
+                q: 'Which of the following is a noun?',
+                options: ['quickly', 'beautiful', 'happiness', 'run'],
+                answer: 2
+            },
+            {
+                q: 'ما جمع كلمة "child"؟',
+                options: ['childs', 'children', 'childes', 'childrens'],
+                answer: 1
+            },
+            {
+                q: 'اختر الترتيب الصحيح للجملة: "rain / It / today / might"',
+                options: ['Might it rain today', 'It might rain today', 'It rain might today', 'Today might it rain'],
+                answer: 1
+            }
+        ];
+        let current = 0;
+        let score = 0;
+        const quizEl = document.getElementById('quiz');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const resultEl = document.getElementById('result');
+        const userAnswers = Array(questions.length).fill(null);
+
+        function loadQuestion(index) {
+            const q = questions[index];
+            let html = `<div class="quiz-question">${index + 1}. ${q.q}</div>`;
+            html += '<div class="quiz-options">';
+            q.options.forEach((opt, i) => {
+                const checked = userAnswers[index] === i ? 'checked' : '';
+                html += `
+                    <label>
+                        <input type="radio" name="option" value="${i}" ${checked}>
+                        ${opt}
+                    </label>
+                `;
+            });
+            html += '</div>';
+            quizEl.innerHTML = html;
+            prevBtn.disabled = index === 0;
+            nextBtn.textContent = index === questions.length - 1 ? 'إرسال' : 'التالي';
+        }
+
+        function showResult() {
+            score = userAnswers.reduce((acc, ans, idx) => {
+                return ans === questions[idx].answer ? acc + 1 : acc;
+            }, 0);
+            let message;
+            const percent = (score / questions.length) * 100;
+            if (percent >= 80) {
+                message = `نتيجتك ${score}/${questions.length} (${percent}%). مستواك متقدم، ننصحك بدورة IELTS أو دورات متقدمة.`;
+            } else if (percent >= 50) {
+                message = `نتيجتك ${score}/${questions.length} (${percent}%). مستواك متوسط، ننصحك بدورة STEP أو القدرات العامة.`;
+            } else {
+                message = `نتيجتك ${score}/${questions.length} (${percent}%). مستواك مبدئي، ننصحك بدورة تأسيس الإنجليزية أو دورة تمهيدية.`;
+            }
+            resultEl.textContent = message;
+            quizEl.style.display = 'none';
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            const selected = quizEl.querySelector('input[name="option"]:checked');
+            if (!selected) {
+                alert('يرجى اختيار إجابة قبل المتابعة.');
+                return;
+            }
+            userAnswers[current] = parseInt(selected.value);
+            if (current === questions.length - 1) {
+                showResult();
+            } else {
+                current++;
+                loadQuestion(current);
+            }
+        });
+        prevBtn.addEventListener('click', () => {
+            if (current > 0) {
+                current--;
+                loadQuestion(current);
+            }
+        });
+
+        // Initialize first question
+        loadQuestion(current);
+    </script>
+</body>
+</html>
