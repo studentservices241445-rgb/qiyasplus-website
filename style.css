@@ -4,18 +4,20 @@ body {
     direction: rtl;
     margin: 0;
     padding: 0;
-    background-color: #f6f7fb;
+    background-color: #fdfdfd;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Header and navigation */
 header {
-    background-color: #004080;
+    background-color: #006c40; /* أخضر داكن يعكس هوية وطنية */
     color: #fff;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 header h1 {
@@ -45,8 +47,8 @@ nav a:hover {
 /* Hero section */
 .hero {
     text-align: center;
-    padding: 60px 20px;
-    background-color: #0070b8;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #006c40 0%, #009966 100%);
     color: #fff;
 }
 
@@ -60,20 +62,21 @@ nav a:hover {
     margin-bottom: 1.5rem;
 }
 
-.hero .cta {
-    background-color: #00a3e0;
+ .hero .cta {
+    background-color: #00a66c;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-}
+    transition: background-color 0.2s ease;
+ }
 
-.hero .cta:hover {
-    background-color: #008ac7;
-}
+ .hero .cta:hover {
+    background-color: #008a57;
+ }
 
 /* Courses section */
 .courses {
@@ -108,19 +111,20 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-.course-card a {
+ .course-card a {
     align-self: flex-start;
-    background-color: #004080;
+    background-color: #006c40;
     color: #fff;
     padding: 8px 12px;
     border-radius: 4px;
     text-decoration: none;
     font-size: 0.9rem;
-}
+    transition: background-color 0.2s ease;
+ }
 
-.course-card a:hover {
-    background-color: #003566;
-}
+ .course-card a:hover {
+    background-color: #004f2d;
+ }
 
 /* Tables for packages */
 table.packages {
@@ -137,7 +141,7 @@ table.packages td {
 }
 
 table.packages th {
-    background-color: #004080;
+    background-color: #006c40;
     color: #fff;
 }
 
@@ -153,24 +157,25 @@ footer {
     padding: 20px 0;
     margin-top: 40px;
 }
+/* تحديث التكرارات السفلية لضمان الاتساق */
 header {
-    background-color: #004080;
+    background-color: #006c40;
     color: white;
     padding: 20px;
     text-align: center;
 }
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #006c40 0%, #009966 100%);
 }
 footer {
-    background-color: #004080;
+    background-color: #006c40;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
-    bottom: 0;
+    margin-top: 40px;
 }
 
 /* Test section styles */
@@ -203,17 +208,19 @@ footer {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
 }
+/* أزرار الدعوة إلى الإجراء في الصفحات الأخرى */
 .cta {
     display: inline-block;
-    background-color: #00a3e0;
+    background-color: #00a66c;
     color: #fff;
-    padding: 8px 14px;
+    padding: 10px 18px;
     margin-top: 0.5rem;
     border-radius: 4px;
     text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 .cta:hover {
-    background-color: #008ac7;
+    background-color: #008a57;
 }
 
 /* Copy button style */
@@ -235,7 +242,7 @@ footer {
     position: fixed;
     bottom: 1rem;
     left: 1rem;
-    background-color: rgba(0, 123, 255, 0.9);
+    background-color: rgba(0, 166, 108, 0.9);
     color: #fff;
     padding: 0.6rem 1rem;
     border-radius: 4px;
